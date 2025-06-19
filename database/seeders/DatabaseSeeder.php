@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Course;
 use App\Models\IncompleteGrade;
 use App\Models\User;
+use App\Models\Announcement;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -98,9 +99,6 @@ class DatabaseSeeder extends Seeder
         foreach ($incompleteGrades as $grade) {
             IncompleteGrade::create($grade);
         }
-
-        App\Models\Course::create(['code' => 'TEST101', 'title' => 'Test Course', 'instructor_name' => 'FAC-2025-001', 'college' => 'Test College']);
-        App\Models\User::create(['name' => 'Test Dean', 'id_number' => 'DEAN-2025-001', 'email' => 'dean@example.com', 'password' => bcrypt('password'), 'role' => 'dean', 'college' => 'Test College']);
 
         // Always seed a test course and dean for announcement testing
         $this->call(AnnouncementTestSeeder::class);

@@ -86,8 +86,8 @@ class User extends Authenticatable
     /**
      * Override the default authentication identifier to use id_number instead of email.
      */
-    public function getAuthIdentifierName()
-    {
-        return 'id_number';
-    }
+    // public function getAuthIdentifierName()
+    // {
+    //     return 'id_number';
+    // }
 }

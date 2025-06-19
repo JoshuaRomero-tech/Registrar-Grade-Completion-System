@@ -35,6 +35,10 @@ class AnnouncementController extends Controller
             'title' => 'required|string|max:255',
             'body' => 'required|string',
         ]);
+        \Log::info('Creating announcement', [
+            'user_id' => Auth::id(),
+            'course_id' => $validated['course_id'],
+        ]);
         Announcement::create([
             'course_id' => $validated['course_id'],
             'title' => $validated['title'],
